@@ -36,7 +36,6 @@ from ultimate_rvc.web.common import (
 from ultimate_rvc.web.typing_extra import ConcurrencyId, SpeechTransferOption
 
 if TYPE_CHECKING:
-
     from ultimate_rvc.web.config.main import TotalConfig
 
 
@@ -201,7 +200,6 @@ def _render_step_2(total_config: TotalConfig) -> None:
                 "Converted speech",
             )
         with gr.Row():
-
             convert_speech_reset_btn = gr.Button("Reset settings")
             convert_speech_btn = gr.Button("Convert speech", variant="primary")
         converted_speech_transfer_btn = gr.Button("Transfer converted speech")
@@ -305,7 +303,7 @@ def _render_step_3(total_config: TotalConfig) -> None:
                     value=partial(
                         update_output_name,
                         get_mixed_speech_track_name,
-                        False,  # noqa: FBT003,,
+                        False,  # noqa: FBT003
                     ),
                     inputs=[
                         gr.State(None),

@@ -100,7 +100,6 @@ def _get_audio_separator(
     segment_size: int = SegmentSize.SEG_256,
     sample_rate: int = 44100,
 ) -> Separator:
-
     static_ffmpeg.add_paths(weak=True)
     from audio_separator.separator import Separator  # noqa: PLC0415
 
@@ -543,7 +542,7 @@ def retrieve_song(source: str, cookiefile: StrPath | None = None) -> tuple[Path,
 
     if not song_path:
         if source_type == SongSourceType.URL:
-            song_url = source.split("&")[0]
+            song_url = source.split("&", maxsplit=1)[0]
             song_path = _get_youtube_audio(song_url, song_dir_path, cookiefile)
 
         else:
