@@ -19,7 +19,7 @@ from urllib.parse import parse_qs, urlparse
 
 from pydantic import ValidationError
 
-from ultimate_rvc.common import SEPARATOR_MODELS_DIR
+from ultimate_rvc.common import NODE_PATH, SEPARATOR_MODELS_DIR
 from ultimate_rvc.core.common import (
     INTERMEDIATE_AUDIO_BASE_DIR,
     OUTPUT_AUDIO_DIR,
@@ -497,6 +497,9 @@ def _get_youtube_audio(
                 "preferredquality": 0,
             },
         ],
+        "js_runtimes": {
+            "node": {"path": str(NODE_PATH)},
+        },
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         result = ydl.extract_info(url, download=True)
