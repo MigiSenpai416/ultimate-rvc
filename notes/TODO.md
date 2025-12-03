@@ -1,5 +1,24 @@
 # TODO
 
+* Test if custom embeddder models stil work
+* incorporate latest changes from applio
+* fix issue with lazy loader for package on windows:
+c:\Users\Jacki\test-project\.venv\Lib\site-packages\lazy_loader\__init__.py:202: RuntimeWarning: subpackages can technically be lazily loaded, but it causes the package to be eagerly loaded even if it is already lazily loaded.So, you probably shouldn't use subpackages with this lazy feature.
+  warnings.warn(msg, RuntimeWarning)
+* fix issue with async network on windows:
+2025-11-30 23:09:50 - ERROR - asyncio - Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Jacki\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Jacki\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py", line 165, in_call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+* fix issue with models table in UI auto scrolling and being unresponsive
+
+* upgrade gradio to 6 and fix warnings
+* check in uv.lock?
+  
 * num threads has been hardcoded to be 1 for crepe as it fails with multiple threads. But this is not reflected in documentation for core API and CLI and UI still shows slider for number of threads. Consider whether we need to update documentation and or have UI disable slider and set num threads to 1 when crepe is selected.
 
 * figure out a way of safely storing PyPI credentials
