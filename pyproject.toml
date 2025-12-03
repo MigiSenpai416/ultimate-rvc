@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "ultimate-rvc"
-version = "0.5.21"
+version = "0.5.22"
 description = "Ultimate RVC"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -18,7 +18,7 @@ dependencies = [
 
   # Networking
   "requests==2.32.5",
-  "yt_dlp[default]>=2025.1.26",
+  "yt_dlp[default]>=2025.11.12",
   "nodejs-wheel-binaries==24.11.1",
   "wget==3.2",
 
